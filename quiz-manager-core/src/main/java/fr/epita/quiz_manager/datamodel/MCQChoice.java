@@ -48,31 +48,16 @@ public class MCQChoice {
 	/**
 	 * @return the valid
 	 */
-	public boolean isValid() {
-		return valid;
+	public boolean isCorrect() {
+		return correct;
 	}
 
 	/**
 	 * @param valid
 	 *            the valid to set
 	 */
-	public void setValid(boolean valid) {
-		this.valid = valid;
-	}
-
-	/**
-	 * @return the order
-	 */
-	public int getOrder() {
-		return order;
-	}
-
-	/**
-	 * @param order
-	 *            the order to set
-	 */
-	public void setOrder(int order) {
-		this.order = order;
+	public void setCorrect(boolean correct) {
+		this.correct = correct;
 	}
 
 	/**
