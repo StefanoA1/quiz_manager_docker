@@ -39,9 +39,8 @@ public class TestQuestion {
 		questDAO.create(question);
 
 		final MCQChoice choice = new MCQChoice();
-		choice.setValid(true);
+		choice.setCorrect(true);
 		choice.setChoice("thanks to a LocalSessionFactoryBean instance");
-		choice.setOrder(0);
 		choice.setQuestion(question);
 	
 		mcqDAO.create(choice);
