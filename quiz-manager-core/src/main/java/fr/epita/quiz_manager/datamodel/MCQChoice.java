@@ -17,10 +17,8 @@ public class MCQChoice {
 	private Integer id;
 
 	private String choice;
-	private boolean valid;
-
-	@Column(name = "MCQCHOICE_ORDER")
-	private int order;
+	// true for correct answer, false otherwise
+	private boolean correct;
 
 	@ManyToOne
 	private Question question;
