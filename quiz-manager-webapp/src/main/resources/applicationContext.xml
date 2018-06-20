@@ -39,7 +39,7 @@
 
 	<bean id="questionDAO" class="fr.epita.quiz_manager.services.QuestionDAO" ></bean>
 	<bean id="mcqChoiceDAO" class="fr.epita.quiz_manager.services.MCQChoiceDAO" ></bean>
-	<bean id="userService" class="fr,epita,quiz_manager.services.UserOperationsService"></bean>
+	<bean id="userService" class="fr.epita.quiz_manager.services.UserOperationsService"></bean>
 	<bean id="questionQuery" class="java.lang.String">
 		<constructor-arg><value><![CDATA[
 			from Question as question where
