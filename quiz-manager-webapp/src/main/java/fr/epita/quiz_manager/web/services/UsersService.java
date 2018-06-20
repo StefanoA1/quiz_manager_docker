@@ -20,7 +20,7 @@ public class UsersService {
 	private UserOperationsService userServices;
 	
 	@POST
-	@Path("/")
+	@Path("/auth")
 	@Produces(value = {MediaType.APPLICATION_JSON_VALUE})
 	public User authenticate(@WebParam User user) {
 		boolean isAuthenticated = userServices.authenticate(user.getUsername(), user.getPassword());
@@ -31,5 +31,13 @@ public class UsersService {
 		}
 		return selectedUser;
 		
+	}
+	
+	@POST
+	@Path("/create/")
+	@Produces(value = {MediaType.APPLICATION_JSON_VALUE})
+	public boolean createUser(@WebParam User criteria) {
+		userServices.createUser(criteria);
+		return true;
 	}
 }

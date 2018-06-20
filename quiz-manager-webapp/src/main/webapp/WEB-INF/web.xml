@@ -38,7 +38,7 @@
     <url-pattern>/quiz-manager/*</url-pattern>
   </servlet-mapping>
   
-<!--   Configuration for cross domain requests, not needed for this project
+<!--   Configuration for cross domain requests, not needed for this project -->
   <filter>
         <filter-name>CorsFilter</filter-name>
         <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
@@ -55,5 +55,5 @@
         <filter-name>CorsFilter</filter-name>
         <url-pattern>/*</url-pattern>
   </filter-mapping>
- -->
+ 
 </web-app>
