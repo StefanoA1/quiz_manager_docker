@@ -9,6 +9,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 
@@ -28,7 +29,10 @@ public abstract class GenericORMDao<T> {
 		}
 
 		final Session session = sf.openSession();
+		Transaction tx = session.beginTransaction();
 		session.saveOrUpdate(entity);
+		tx.commit();
+		session.close();
 
 	}
 
@@ -38,17 +42,22 @@ public abstract class GenericORMDao<T> {
 
 	public final void update(T entity) {
 		final Session session = sf.openSession();
+		Transaction tx = session.beginTransaction();
 		session.saveOrUpdate(entity);
+		tx.commit();
 	}
 
 	public final void delete(T entity) {
 		final Session session = sf.openSession();
+		Transaction tx = session.beginTransaction();
 		session.delete(entity);
+		tx.commit();
 	}
 
 	public final List<T> search(T entity) {
 		Query searchQuery = null;
 		Session session = null;
+		List<T> results = null;
 		try {
 			session = sf.openSession();
 			final WhereClauseBuilder<T> wcb = getWhereClauseBuilder(entity);
@@ -56,6 +65,7 @@ public abstract class GenericORMDao<T> {
 			for (final Entry<String, Object> parameterEntry : wcb.getParameters().entrySet()) {
 				searchQuery.setParameter(parameterEntry.getKey(), parameterEntry.getValue());
 			}
+			results = searchQuery.list();
 
 			
 		} catch (Exception e) {
@@ -67,7 +77,7 @@ public abstract class GenericORMDao<T> {
 			
 		}
 		
-		return searchQuery.list();
+		return results;
 		
 	}
 

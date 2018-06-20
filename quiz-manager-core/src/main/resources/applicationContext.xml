@@ -69,10 +69,10 @@
 	<bean id="userQuery" class="java.lang.String">
 		<constructor-arg>
 			<value><![CDATA[
-			from User as user where
+			from UserData as user where
 				user.password = :password
 			and
-				question.username = :username
+				user.username = :username
 		]]></value>
 		</constructor-arg>
 

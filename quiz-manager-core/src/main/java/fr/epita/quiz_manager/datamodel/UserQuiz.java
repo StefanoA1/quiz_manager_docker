@@ -16,6 +16,8 @@ public class UserQuiz {
 	private Integer id;
 	@ManyToOne
 	private User user;
+	
 	private ArrayList<MCQChoice> answers;
+	@ManyToOne
 	private Quiz quiz;
 }

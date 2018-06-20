@@ -31,9 +31,7 @@ public class UserOperationsService {
 	}
 	
 	public void createUser(User user) {
-		Transaction tx = factory.openSession().beginTransaction();
 		userDAO.create(user);
-		tx.commit();
 	}
 	
 	public List<User> search(User criteria) {

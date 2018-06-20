@@ -23,6 +23,8 @@ public class UserDAO extends GenericORMDao<User>{
 		final Map<String, Object> parameters = new LinkedHashMap<>();
 		parameters.put("username", entity.getUsername());
 		parameters.put("password", entity.getPassword());
+		parameters.put("name", entity.getName());
+		parameters.put("type", entity.getType());
 		wcb.setParameters(parameters);
 		return wcb;
 
