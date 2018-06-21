@@ -36,14 +36,14 @@ public class TestQuestion {
 		question.setQuestion("How to configure Hibernate?");
 		question.setType(QuestionType.MCQ);
 
-		questDAO.create(question);
+		questDAO.create(question, session);
 
 		final MCQChoice choice = new MCQChoice();
 		choice.setCorrect(true);
 		choice.setChoice("thanks to a LocalSessionFactoryBean instance");
 		choice.setQuestion(question);
 	
-		mcqDAO.create(choice);
+		mcqDAO.create(choice, session);
 		tx.commit();
 
 	}

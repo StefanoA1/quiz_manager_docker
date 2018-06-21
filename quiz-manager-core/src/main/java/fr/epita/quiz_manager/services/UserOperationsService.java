@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
@@ -31,7 +32,11 @@ public class UserOperationsService {
 	}
 	
 	public void createUser(User user) {
-		userDAO.create(user);
+		final Session session = factory.openSession();
+		final Transaction transaction = session.beginTransaction();
+		userDAO.create(user, session);
+		transaction.commit();
+		session.close();
 	}
 	
 	public List<User> search(User criteria) {

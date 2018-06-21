@@ -66,18 +66,21 @@
 
 	</bean>
 
-	<bean id="userQuery" class="java.lang.String">
+		<bean id="userQuery" class="java.lang.String">
 		<constructor-arg>
 			<value><![CDATA[
 			from UserData as user where
-				user.password = :password
+				(:password is null or user.password like :password)
 			and
-				user.username = :username
+				(:username is null or user.username like :username)
+			and
+				(:type is null or user.userType = :type)
+			and
+				(:name is null or user.name like :name)
 		]]></value>
 		</constructor-arg>
 
 	</bean>
-
 
 
 </beans>

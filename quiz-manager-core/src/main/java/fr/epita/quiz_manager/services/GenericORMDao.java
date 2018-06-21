@@ -23,16 +23,13 @@ public abstract class GenericORMDao<T> {
 	
 	private static final Logger LOGGER = LogManager.getLogger(GenericORMDao.class);
 
-	public final void create(T entity) {
+	public final void create(T entity, Session session) {
 		if (!beforeCreate(entity)) {
 			return;
 		}
 
-		final Session session = sf.openSession();
-		Transaction tx = session.beginTransaction();
 		session.saveOrUpdate(entity);
-		tx.commit();
-		session.close();
+		
 
 	}
 
@@ -40,18 +37,12 @@ public abstract class GenericORMDao<T> {
 		return entity != null;
 	}
 
-	public final void update(T entity) {
-		final Session session = sf.openSession();
-		Transaction tx = session.beginTransaction();
+	public final void update(T entity, Session session) {
 		session.saveOrUpdate(entity);
-		tx.commit();
 	}
 
-	public final void delete(T entity) {
-		final Session session = sf.openSession();
-		Transaction tx = session.beginTransaction();
+	public final void delete(T entity, Session session) {
 		session.delete(entity);
-		tx.commit();
 	}
 
 	public final List<T> search(T entity) {
