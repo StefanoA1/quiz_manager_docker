@@ -1,6 +1,9 @@
 package fr.epita.quiz_manager.datamodel;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,8 +20,8 @@ public class User {
 	private String name;
 	private String username;
 	private String password;
-	
-	private UserType type;
+	@Enumerated(EnumType.ORDINAL)
+	private UserType userType;
 	/**
 	 * @return the name
 	 */
@@ -70,14 +73,14 @@ public class User {
 	/**
 	 * @return the type
 	 */
-	public UserType getType() {
-		return type;
+	public UserType getUserType() {
+		return userType;
 	}
 	/**
 	 * @param type the type to set
 	 */
-	public void setType(UserType type) {
-		this.type = type;
+	public void setUserType(UserType userType) {
+		this.userType = userType;
 	}
 	
 	

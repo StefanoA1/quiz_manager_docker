@@ -31,7 +31,7 @@ public class TestUser {
 		user1.setName("Juan");
 		user1.setPassword("test");
 		user1.setUsername("hola");
-		user1.setType(UserType.STUDENT);
+		user1.setUserType(UserType.STUDENT);
 		
 		userService.createUser(user1);
 		

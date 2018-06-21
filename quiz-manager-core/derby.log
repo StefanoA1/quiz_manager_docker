@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Wed Jun 20 11:51:19 BOT 2018:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.1.0 - (1808820): instance a816c00e-0164-1de4-9f0a-000005a32630 
+Thu Jun 21 14:51:30 BOT 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.1.0 - (1808820): instance a816c00e-0164-23af-f102-000005a2c268 
 on database directory memory:C:\Users\users1234\git\quizManager\quiz-manager-core\testDS with class loader sun.misc.Launcher$AppClassLoader@3cd1a2f1 
 Loaded from file:/C:/Users/users1234/.m2/repository/org/apache/derby/derby/10.14.1.0/derby-10.14.1.0.jar
 java.vendor=Oracle Corporation

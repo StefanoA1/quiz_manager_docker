@@ -1,5 +1,6 @@
 package fr.epita.quiz_manager.services;
 
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -20,11 +21,11 @@ public class UserDAO extends GenericORMDao<User>{
 		final WhereClauseBuilder<User> wcb = new WhereClauseBuilder<>();
 		wcb.setQueryString(query);
 
-		final Map<String, Object> parameters = new LinkedHashMap<>();
+		final Map<String, Object> parameters = new HashMap<>();
 		parameters.put("username", entity.getUsername());
 		parameters.put("password", entity.getPassword());
 		parameters.put("name", entity.getName());
-		parameters.put("type", entity.getType());
+		parameters.put("type", entity.getUserType());
 		wcb.setParameters(parameters);
 		return wcb;
 
