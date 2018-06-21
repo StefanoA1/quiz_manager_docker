@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.jws.WebParam;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -11,6 +12,7 @@ import javax.ws.rs.Produces;
 import org.springframework.http.MediaType;
 
 import fr.epita.quiz_manager.datamodel.User;
+import fr.epita.quiz_manager.datamodel.UserType;
 import fr.epita.quiz_manager.services.UserOperationsService;
 
 @Path("/")
@@ -34,10 +36,17 @@ public class UsersService {
 	}
 	
 	@POST
-	@Path("/create/")
+	@Path("/create")
 	@Produces(value = {MediaType.APPLICATION_JSON_VALUE})
 	public boolean createUser(@WebParam User criteria) {
 		userServices.createUser(criteria);
 		return true;
+	}
+	
+	@GET
+	@Path("/users")
+	@Produces(value = {MediaType.APPLICATION_JSON_VALUE})
+	public List<User> getUsers() {
+		return userServices.search(new User());
 	}
 }

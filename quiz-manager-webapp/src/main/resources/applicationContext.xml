@@ -43,13 +43,13 @@
 		<constructor-arg>
 			<value><![CDATA[
 			from UserData as user where
-				user.password = :password
+				(:password is null or user.password like :password)
 			and
-				user.username = :username
+				(:username is null or user.username like :username)
 			and
-				user.type = :type
+				(:type is null or user.userType = :type)
 			and
-				user.name = :name
+				(:name is null or user.name like :name)
 		]]></value>
 		</constructor-arg>
 
