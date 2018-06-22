@@ -1,6 +1,7 @@
 package fr.epita.quiz_manager.datamodel;
 
 import java.util.ArrayList;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +19,7 @@ public class Quiz {
 	private String name;
 	
 	@ManyToMany
-	private ArrayList<Question> questionList;
+	private Set<Question> questionList;
 
 	public String getName() {
 		return name;
@@ -28,11 +29,11 @@ public class Quiz {
 		this.name = name;
 	}
 
-	public ArrayList<Question> getQuestionList() {
+	public Set<Question> getQuestionList() {
 		return questionList;
 	}
 
-	public void setQuestionList(ArrayList<Question> questionList) {
+	public void setQuestionList(Set<Question> questionList) {
 		this.questionList = questionList;
 	}
 

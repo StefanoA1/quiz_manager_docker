@@ -2,12 +2,14 @@ package fr.epita.quiz_manager.datamodel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 
 @Entity
 public class UserQuiz {
@@ -17,10 +19,12 @@ public class UserQuiz {
 	private Integer id;
 	@ManyToOne
 	private User user;
-	
+	@Transient
 	private List<MCQChoice> answers;
 	@ManyToOne
 	private Quiz quiz;
+	
+	private Double score;
 	/**
 	 * @return the id
 	 */
