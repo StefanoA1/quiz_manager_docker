@@ -58,6 +58,8 @@
 		<constructor-arg>
 			<value><![CDATA[
 			from Question as question where
+				(:id is null or question.id = :id)
+			and
 				(:type is null or question.type = :type)
 			and
 				(:question is null or question.question = :question)
@@ -65,8 +67,11 @@
 		</constructor-arg>
 
 	</bean>
+	<bean id="questionService"
+		class="fr.epita.quiz_manager.services.QuestionOperationsService">
+	</bean>
 
-		<bean id="userQuery" class="java.lang.String">
+	<bean id="userQuery" class="java.lang.String">
 		<constructor-arg>
 			<value><![CDATA[
 			from UserData as user where

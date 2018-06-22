@@ -27,7 +27,7 @@ public class QuestionOperationsService {
 
 	// @Transactional
 	// TODO check that in a further lecture
-	public void deleteQuestion(Question question) {
+	public void deleteMCQQuestion(Question question) {
 		final Session session = factory.openSession();
 		final Transaction transaction = session.beginTransaction();
 		final MCQChoice criteria = new MCQChoice();
@@ -41,7 +41,7 @@ public class QuestionOperationsService {
 		session.close();
 	}
 	
-	public void createQuestion(Question question, List<MCQChoice> answers) {
+	public void createMCQQuestion(Question question, List<MCQChoice> answers) {
 		final Session session = factory.openSession();
 		final Transaction transaction = session.beginTransaction();
 		questiondao.create(question, session);
@@ -53,7 +53,7 @@ public class QuestionOperationsService {
 		session.close();
 	}
 	
-	public void updateQuestion(Question question, List<MCQChoice> answers) {
+	public void updateMCQQuestion(Question question, List<MCQChoice> answers) {
 		final Session session = factory.openSession();
 		final Transaction transaction = session.beginTransaction();
 		final MCQChoice criteria = new MCQChoice();
