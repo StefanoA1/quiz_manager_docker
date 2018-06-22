@@ -14,7 +14,7 @@ public class Question {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-	private String question;
+	private String title;
 	private QuestionType type;
 
 	/**
@@ -26,16 +26,16 @@ public class Question {
 	/**
 	 * @return the question
 	 */
-	public String getQuestion() {
-		return question;
+	public String getTitle() {
+		return title;
 	}
 
 	/**
 	 * @param question
 	 *            the question to set
 	 */
-	public void setQuestion(String question) {
-		this.question = question;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	/**
