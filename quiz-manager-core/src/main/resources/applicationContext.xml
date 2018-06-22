@@ -119,6 +119,22 @@
 		</constructor-arg>
 
 	</bean>
+	
+		<bean id="userquizQuery" class="java.lang.String">
+		<constructor-arg>
+			<value><![CDATA[
+			from UserQuiz as userquiz where
+				(:id is null or userquiz.id like :id)
+			and
+				(:name is null or userquiz.name like :name)
+			and
+				(:quiz is null or userquiz.quiz like :quiz)
+			and
+				(:score is null or userquiz.score like:score)
+		]]></value>
+		</constructor-arg>
+
+	</bean>
 
 
 </beans>
