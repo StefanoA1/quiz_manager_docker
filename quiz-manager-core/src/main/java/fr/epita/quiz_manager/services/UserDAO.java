@@ -1,13 +1,11 @@
 package fr.epita.quiz_manager.services;
 
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import fr.epita.quiz_manager.datamodel.Question;
 import fr.epita.quiz_manager.datamodel.User;
 
 public class UserDAO extends GenericORMDao<User>{
