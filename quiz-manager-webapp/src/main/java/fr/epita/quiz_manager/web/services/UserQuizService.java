@@ -17,6 +17,7 @@ import fr.epita.quiz_manager.web.param.models.UserQuizWrapper;
 
 @Path("/userquizzes")
 public class UserQuizService {
+	
 	@Inject
 	private UserQuizOperationsService userquizServices;
 	
