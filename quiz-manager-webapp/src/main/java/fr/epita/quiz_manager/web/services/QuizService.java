@@ -6,6 +6,7 @@ import javax.jws.WebParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 import org.springframework.http.MediaType;
@@ -36,9 +37,11 @@ public class QuizService {
 	}
 	
 	@GET
-	@Path("/except")
+	@Path("/except/{id}")
 	@Produces(value = {MediaType.APPLICATION_JSON_VALUE})
-	public List<Question> getOtherQuestions(Quiz quiz) {
+	public List<Question> getOtherQuestions(@PathParam("id") Integer id) {
+		Quiz quiz = new Quiz();
+		quiz.setId(id);
 		return quizServices.searchExcept(quiz);
 	}
 	
