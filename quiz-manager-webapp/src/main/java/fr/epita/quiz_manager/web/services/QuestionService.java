@@ -11,7 +11,6 @@ import javax.ws.rs.Produces;
 
 import org.springframework.http.MediaType;
 
-import fr.epita.quiz_manager.datamodel.MCQChoice;
 import fr.epita.quiz_manager.datamodel.Question;
 import fr.epita.quiz_manager.services.QuestionOperationsService;
 import fr.epita.quiz_manager.web.param.models.MCQQuestion;
