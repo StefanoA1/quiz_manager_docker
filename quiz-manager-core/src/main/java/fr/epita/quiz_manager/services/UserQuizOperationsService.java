@@ -26,5 +26,10 @@ public class UserQuizOperationsService {
 		transaction.commit();
 		session.close();
 	}
+	
+	public List<UserQuiz> search(UserQuiz criteria) {
+		// Look for possible quizzes to match criteria
+		return userquizdao.search(criteria);
+	}
 
 }
