@@ -36,6 +36,14 @@ public class QuizService {
 		return quizServices.search(new Quiz());
 	}
 	
+	@POST
+	@Path("/byid")
+	@Produces(value = {MediaType.APPLICATION_JSON_VALUE})
+	public Quiz getQuizById(@WebParam Quiz quiz) {
+		List<Quiz> tempList = quizServices.search(quiz);
+		return tempList.get(0);
+	}
+	
 	@GET
 	@Path("/except/{id}")
 	@Produces(value = {MediaType.APPLICATION_JSON_VALUE})
