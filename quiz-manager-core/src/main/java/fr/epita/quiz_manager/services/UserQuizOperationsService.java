@@ -1,8 +1,6 @@
 package fr.epita.quiz_manager.services;
 
 import java.util.List;
-import java.util.Set;
-
 import javax.inject.Inject;
 
 import org.hibernate.Session;
