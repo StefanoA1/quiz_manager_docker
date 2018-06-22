@@ -6,7 +6,6 @@ import java.util.Map;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import fr.epita.quiz_manager.datamodel.Quiz;
 import fr.epita.quiz_manager.datamodel.UserQuiz;
 
 public class UserQuizDAO extends GenericORMDao<UserQuiz> {
