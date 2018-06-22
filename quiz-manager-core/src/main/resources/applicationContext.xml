@@ -54,6 +54,8 @@
 	<bean id="mcqChoiceDAO"
 		class="fr.epita.quiz_manager.services.MCQChoiceDAO"></bean>
 	<bean id="userDAO" class="fr.epita.quiz_manager.services.UserDAO"></bean>
+	<bean id="quizDAO"
+		class="fr.epita.quiz_manager.services.QuizDAO"></bean>
 	<bean id="questionQuery" class="java.lang.String">
 		<constructor-arg>
 			<value><![CDATA[
