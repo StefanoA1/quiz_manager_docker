@@ -77,5 +77,12 @@ public class QuestionOperationsService {
 	public List<Question> search(Question criteria) {
 		return questiondao.search(criteria);
 	}
+	
+	public List<MCQChoice> searchMCQChoices(Question question){
+		Question realQuestion = questiondao.search(question).get(0);
+		MCQChoice criteria = new MCQChoice();
+		criteria.setQuestion(realQuestion);
+		return mcqChoicedao.search(criteria);
+	}
 
 }

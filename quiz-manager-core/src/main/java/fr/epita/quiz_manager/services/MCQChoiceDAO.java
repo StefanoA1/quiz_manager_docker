@@ -30,7 +30,7 @@ public class MCQChoiceDAO extends GenericORMDao<MCQChoice> {
 		parameters.put("id", entity.getId());
 		parameters.put("choice", entity.getChoice());
 		parameters.put("correct", entity.isCorrect());
-		parameters.put("questionId", entity.getQuestion().getId());
+		parameters.put("question", entity.getQuestion());
 		
 		return whereClauseBuilder;
 
