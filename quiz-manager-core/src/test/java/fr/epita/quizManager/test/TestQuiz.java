@@ -1,7 +1,7 @@
 package fr.epita.quizManager.test;
 
-import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.inject.Inject;
@@ -9,6 +9,7 @@ import javax.inject.Inject;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -21,6 +22,7 @@ import fr.epita.quiz_manager.datamodel.Quiz;
 import fr.epita.quiz_manager.services.MCQChoiceDAO;
 import fr.epita.quiz_manager.services.QuestionDAO;
 import fr.epita.quiz_manager.services.QuizDAO;
+import fr.epita.quiz_manager.services.QuizOperationsService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations= {"/applicationContext.xml"})
@@ -33,6 +35,9 @@ public class TestQuiz {
 	
 	@Inject
 	MCQChoiceDAO mcqDAO;
+	
+	@Inject
+	QuizOperationsService quizService;
 
 	@Inject
 	SessionFactory factory;
@@ -44,7 +49,7 @@ public class TestQuiz {
 		final Quiz quiz = new Quiz();
 		quiz.setName("Maven Test");
 		
-		quizDAO.create(quiz, session);
+		
 		
 		final Set<Question> questions = new HashSet<Question>();		
 		final Question question = new Question();
@@ -61,8 +66,13 @@ public class TestQuiz {
 		mcqDAO.create(choice, session);
 		questions.add(question);
 		quiz.setQuestionList(questions);
+		
+		quizDAO.create(quiz, session);
+		
+		List<Quiz> results = quizService.search(quiz);
 		tx.commit();
-
+		
+		Assert.assertTrue(results.size() > 0);
 	}
 
 }
