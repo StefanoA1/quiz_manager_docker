@@ -66,7 +66,7 @@
 
 	</bean>
 
-		<bean id="userQuery" class="java.lang.String">
+	<bean id="userQuery" class="java.lang.String">
 		<constructor-arg>
 			<value><![CDATA[
 			from UserData as user where
@@ -77,6 +77,18 @@
 				(:type is null or user.userType = :type)
 			and
 				(:name is null or user.name like :name)
+		]]></value>
+		</constructor-arg>
+
+	</bean>
+	
+	<bean id="quizQuery" class="java.lang.String">
+		<constructor-arg>
+			<value><![CDATA[
+			from Quiz as quiz where
+				(:name is null or quiz.name like :name)
+			and
+				(:questionList is null or quiz.questionList like :questionList)
 		]]></value>
 		</constructor-arg>
 
