@@ -2,6 +2,7 @@ package fr.epita.quiz_manager.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import javax.inject.Inject;
 
@@ -20,7 +21,7 @@ public class QuizOperationsService {
 	@Inject
 	private SessionFactory factory;
 
-	public void createQuiz(Quiz quiz, ArrayList<Question> questions) {
+	public void createQuiz(Quiz quiz, Set<Question> questions) {
 		final Session session = factory.openSession();
 		final Transaction transaction = session.beginTransaction();
 		quizdao.create(quiz, session);
@@ -32,7 +33,7 @@ public class QuizOperationsService {
 		session.close();
 	}
 
-	public void updateQuiz(Quiz quiz, ArrayList<Question> questionList) {
+	public void updateQuiz(Quiz quiz, Set<Question> questionList) {
 		final Session session = factory.openSession();
 		final Transaction transaction = session.beginTransaction();
 

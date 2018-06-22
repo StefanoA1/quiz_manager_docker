@@ -1,6 +1,8 @@
 package fr.epita.quizManager.test;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.inject.Inject;
 
@@ -44,7 +46,7 @@ public class TestQuiz {
 		
 		quizDAO.create(quiz, session);
 		
-		final ArrayList<Question> questions = new ArrayList<Question>();		
+		final Set<Question> questions = new HashSet<Question>();		
 		final Question question = new Question();
 		question.setTitle("How to configure Hibernate?");
 		question.setType(QuestionType.MCQ);
