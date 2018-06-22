@@ -57,13 +57,13 @@
 		<constructor-arg>
 			<value><![CDATA[
 			from MCQChoice as mcqchoice where
-				(:id is null or mcqchoise.id = :id)
+				(:id is null or mcqchoice.id = :id)
 			and
 				(:choice is null or mcqchoice.choice like :choice)
 			and
 				(:correct is null or mcqchoice.correct = :correct)
 			and
-				(:questionId is null or mcqchoise.question_id = :questionId)
+				(:question is null or mcqchoice.question = :question)
 		]]></value>
 		</constructor-arg>
 
