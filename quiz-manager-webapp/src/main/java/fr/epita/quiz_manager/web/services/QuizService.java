@@ -10,6 +10,7 @@ import javax.ws.rs.Produces;
 
 import org.springframework.http.MediaType;
 
+import fr.epita.quiz_manager.datamodel.Question;
 import fr.epita.quiz_manager.datamodel.Quiz;
 import fr.epita.quiz_manager.services.QuizOperationsService;
 import fr.epita.quiz_manager.web.param.models.QuizAndQuestions;
@@ -28,10 +29,17 @@ public class QuizService {
 	}
 	
 	@GET
-	@Path("/quizzes")
+	@Path("/")
 	@Produces(value = {MediaType.APPLICATION_JSON_VALUE})
 	public List<Quiz> getQuizzes() {
 		return quizServices.search(new Quiz());
+	}
+	
+	@GET
+	@Path("/except")
+	@Produces(value = {MediaType.APPLICATION_JSON_VALUE})
+	public List<Question> getOtherQuestions(Quiz quiz) {
+		return quizServices.searchExcept(quiz);
 	}
 	
 	@POST

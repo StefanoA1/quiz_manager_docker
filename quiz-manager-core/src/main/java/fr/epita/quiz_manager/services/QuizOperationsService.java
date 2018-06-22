@@ -17,6 +17,8 @@ public class QuizOperationsService {
 	private QuizDAO quizdao;
 	@Inject
 	private SessionFactory factory;
+	@Inject
+	QuestionOperationsService questionOperationsService;
 
 	public void createQuiz(Quiz quiz, Set<Question> questions) {
 		final Session session = factory.openSession();
@@ -45,6 +47,15 @@ public class QuizOperationsService {
 	public List<Quiz> search(Quiz criteria) {
 		// Look for possible quizzes to match criteria
 		return quizdao.search(criteria);
+	}
+	
+	public List<Question> searchExcept(Quiz criteria) {
+		// Look for possible quizzes to match criteria
+		Question emptyQuestion = new Question();
+		List<Question> allQuestions;
+		allQuestions = questionOperationsService.search(emptyQuestion);
+		allQuestions.removeAll(criteria.getQuestionList());
+		return allQuestions;
 	}
 	
 	public void deleteQuiz(Quiz quiz) {
