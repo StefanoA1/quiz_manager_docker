@@ -126,7 +126,7 @@
 			from UserQuiz as userquiz where
 				(:id is null or userquiz.id like :id)
 			and
-				(:name is null or userquiz.name like :name)
+				(:user is null or userquiz.user like :user)
 			and
 				(:quiz is null or userquiz.quiz like :quiz)
 			and
