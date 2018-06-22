@@ -52,5 +52,30 @@ public class QuestionOperationsService {
 		transaction.commit();
 		session.close();
 	}
+	
+	public void updateQuestion(Question question, List<MCQChoice> answers) {
+		final Session session = factory.openSession();
+		final Transaction transaction = session.beginTransaction();
+		final MCQChoice criteria = new MCQChoice();
+		criteria.setQuestion(question);
+		final List<MCQChoice> choicesList = mcqChoicedao.search(criteria);
+		// delete old answers
+		for (final MCQChoice choice : choicesList) {
+			mcqChoicedao.delete(choice, session);
+		}
+		//update question
+		questiondao.update(question, session);
+		// create new updated answers 
+		for(MCQChoice choice : answers) {
+			choice.setQuestion(question);
+			mcqChoicedao.create(choice, session);
+		}
+		transaction.commit();
+		session.close();
+	}
+	
+	public List<Question> search(Question criteria) {
+		return questiondao.search(criteria);
+	}
 
 }
