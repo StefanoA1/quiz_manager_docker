@@ -60,7 +60,7 @@
 			and
 				(:type is null or question.type = :type)
 			and
-				(:question is null or question.question = :question)
+				(:title is null or question.title = :title)
 		]]></value>
 		</constructor-arg>
 

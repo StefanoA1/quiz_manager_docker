@@ -46,7 +46,7 @@ public class TestQuiz {
 		
 		final ArrayList<Question> questions = new ArrayList<Question>();		
 		final Question question = new Question();
-		question.setQuestion("How to configure Hibernate?");
+		question.setTitle("How to configure Hibernate?");
 		question.setType(QuestionType.MCQ);
 
 		questDAO.create(question, session);
