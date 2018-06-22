@@ -2,6 +2,7 @@ package fr.epita.quiz_manager.web.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import javax.inject.Inject;
 import javax.jws.WebParam;
@@ -24,7 +25,7 @@ public class QuizService {
 	@POST
 	@Path("/create")
 	@Produces(value = {MediaType.APPLICATION_JSON_VALUE})
-	public boolean createQuiz(@WebParam Quiz criteria, @WebParam ArrayList<Question> questionsList) {
+	public boolean createQuiz(@WebParam Quiz criteria, @WebParam Set<Question> questionsList) {
 		quizServices.createQuiz(criteria, questionsList);
 		return true;
 	}
@@ -46,7 +47,7 @@ public class QuizService {
 	@POST
 	@Path("/update")
 	@Produces(value = {MediaType.APPLICATION_JSON_VALUE})
-	public void updateQuiz(@WebParam Quiz quiz, @WebParam ArrayList<Question> questionsList) {
+	public void updateQuiz(@WebParam Quiz quiz, @WebParam Set<Question> questionsList) {
 		quizServices.updateQuiz(quiz, questionsList);
 	}
 }
