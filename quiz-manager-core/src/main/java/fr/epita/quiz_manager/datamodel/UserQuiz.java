@@ -1,9 +1,6 @@
 package fr.epita.quiz_manager.datamodel;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
