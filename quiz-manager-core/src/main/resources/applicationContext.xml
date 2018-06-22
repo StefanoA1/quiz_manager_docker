@@ -67,8 +67,25 @@
 				(:title is null or question.title = :title)
 		]]></value>
 		</constructor-arg>
+	</bean>
+	
+	<bean id="mcqChoiceQuery" class="java.lang.String">
+		<constructor-arg>
+			<value><![CDATA[
+			from MCQChoice as mcqchoice where
+				(:id is null or mcqchoise.id = :id)
+			and
+				(:choice is null or mcqchoice.choice like :choice)
+			and
+				(:correct is null or mcqchoice.correct = :correct)
+			and
+				(:questionId is null or mcqchoise.question_id = :questionId)
+		]]></value>
+		</constructor-arg>
 
 	</bean>
+	
+	
 	<bean id="questionService"
 		class="fr.epita.quiz_manager.services.QuestionOperationsService">
 	</bean>

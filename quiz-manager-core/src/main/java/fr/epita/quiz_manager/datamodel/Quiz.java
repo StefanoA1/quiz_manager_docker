@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Quiz {
@@ -16,6 +17,7 @@ public class Quiz {
 	
 	private String name;
 	
+	@ManyToMany
 	private ArrayList<Question> questionList;
 
 	public String getName() {
