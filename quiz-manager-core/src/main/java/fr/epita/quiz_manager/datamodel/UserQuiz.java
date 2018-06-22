@@ -67,6 +67,18 @@ public class UserQuiz {
 	public void setQuiz(Quiz quiz) {
 		this.quiz = quiz;
 	}
+	/**
+	 * @return the score
+	 */
+	public Double getScore() {
+		return score;
+	}
+	/**
+	 * @param score the score to set
+	 */
+	public void setScore(Double score) {
+		this.score = score;
+	}
 	
 	
 }
