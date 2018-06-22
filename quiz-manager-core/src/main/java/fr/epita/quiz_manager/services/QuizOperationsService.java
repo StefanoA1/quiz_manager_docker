@@ -16,8 +16,6 @@ public class QuizOperationsService {
 	@Inject
 	private QuizDAO quizdao;
 	@Inject
-	private QuestionDAO questiondao;
-	@Inject
 	private SessionFactory factory;
 
 	public void createQuiz(Quiz quiz, Set<Question> questions) {
@@ -25,9 +23,9 @@ public class QuizOperationsService {
 		final Transaction transaction = session.beginTransaction();
 		quizdao.create(quiz, session);
 		quiz.setQuestionList(questions);
-		for (Question question : questions) {
+		/*for (Question question : questions) {
 			questiondao.create(question, session);
-		}
+		}*/
 		transaction.commit();
 		session.close();
 	}
