@@ -1,6 +1,7 @@
 package fr.epita.quiz_manager.datamodel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +18,7 @@ public class UserQuiz {
 	@ManyToOne
 	private User user;
 	
-	private ArrayList<MCQChoice> answers;
+	private List<MCQChoice> answers;
 	@ManyToOne
 	private Quiz quiz;
 	/**
@@ -41,13 +42,13 @@ public class UserQuiz {
 	/**
 	 * @return the answers
 	 */
-	public ArrayList<MCQChoice> getAnswers() {
+	public List<MCQChoice> getAnswers() {
 		return answers;
 	}
 	/**
 	 * @param answers the answers to set
 	 */
-	public void setAnswers(ArrayList<MCQChoice> answers) {
+	public void setAnswers(List<MCQChoice> answers) {
 		this.answers = answers;
 	}
 	/**
