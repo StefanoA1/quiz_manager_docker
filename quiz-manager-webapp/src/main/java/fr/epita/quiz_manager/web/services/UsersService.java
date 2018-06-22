@@ -12,7 +12,6 @@ import javax.ws.rs.Produces;
 import org.springframework.http.MediaType;
 
 import fr.epita.quiz_manager.datamodel.User;
-import fr.epita.quiz_manager.datamodel.UserType;
 import fr.epita.quiz_manager.services.UserOperationsService;
 
 @Path("/")
