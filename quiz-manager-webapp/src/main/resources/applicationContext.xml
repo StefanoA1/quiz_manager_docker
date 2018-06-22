@@ -111,9 +111,27 @@
 		<constructor-arg>
 			<value><![CDATA[
 			from Quiz as quiz where
+				(:id is null or quiz.id like :id)
+			and
 				(:name is null or quiz.name like :name)
 			and
 				(:questionList is null or quiz.questionList like :questionList)
+		]]></value>
+		</constructor-arg>
+
+	</bean>
+	
+		<bean id="userquizQuery" class="java.lang.String">
+		<constructor-arg>
+			<value><![CDATA[
+			from UserQuiz as userquiz where
+				(:id is null or userquiz.id like :id)
+			and
+				(:user is null or userquiz.user like :user)
+			and
+				(:quiz is null or userquiz.quiz like :quiz)
+			and
+				(:score is null or userquiz.score like:score)
 		]]></value>
 		</constructor-arg>
 
