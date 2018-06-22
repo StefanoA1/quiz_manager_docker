@@ -21,6 +21,7 @@ public class QuizDAO extends GenericORMDao<Quiz> {
 
 		// TODO as bonus : let the whereclausebuilder generate this map thanks to introspection
 		final Map<String, Object> parameters = new LinkedHashMap<>();
+		parameters.put("id", entity.getId());
 		parameters.put("name", entity.getName());
 		parameters.put("questionList", entity.getQuestionList());
 		wcb.setParameters(parameters);
