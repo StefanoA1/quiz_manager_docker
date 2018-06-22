@@ -1,6 +1,5 @@
 package fr.epita.quiz_manager.datamodel;
 
-import java.util.ArrayList;
 import java.util.Set;
 
 import javax.persistence.Entity;
