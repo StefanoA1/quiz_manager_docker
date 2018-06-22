@@ -1,9 +1,11 @@
 package fr.epita.quiz_manager.web.services;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.jws.WebParam;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -27,5 +29,24 @@ public class QuizService {
 		return true;
 	}
 	
+	@GET
+	@Path("/quizzes")
+	@Produces(value = {MediaType.APPLICATION_JSON_VALUE})
+	public List<Quiz> getQuizzes() {
+		return quizServices.search(new Quiz());
+	}
 	
+	@POST
+	@Path("/delete")
+	@Produces(value = {MediaType.APPLICATION_JSON_VALUE})
+	public void deleteQuiz(Quiz quiz) {
+		quizServices.deleteQuiz(quiz);
+	}
+	
+	@POST
+	@Path("/update")
+	@Produces(value = {MediaType.APPLICATION_JSON_VALUE})
+	public void updateQuiz(@WebParam Quiz quiz, @WebParam ArrayList<Question> questionsList) {
+		quizServices.updateQuiz(quiz, questionsList);
+	}
 }
