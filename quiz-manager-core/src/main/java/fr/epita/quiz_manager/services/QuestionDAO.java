@@ -26,6 +26,7 @@ public class QuestionDAO extends GenericORMDao<Question> {
 		final Map<String, Object> parameters = new LinkedHashMap<>();
 		parameters.put("type", entity.getType());
 		parameters.put("question", entity.getQuestion());
+		parameters.put("id", entity.getId());
 		wcb.setParameters(parameters);
 		return wcb;
 
