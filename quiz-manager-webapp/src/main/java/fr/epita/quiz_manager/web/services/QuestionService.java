@@ -24,7 +24,7 @@ public class QuestionService {
 	@GET
 	@Path("/")
 	@Produces(value = {MediaType.APPLICATION_JSON_VALUE})
-	public List<Question> getUsers() {
+	public List<Question> getQuestions() {
 		return questionOperationsService.search(new Question());
 	}
 	
