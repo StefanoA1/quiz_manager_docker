@@ -12,6 +12,33 @@ import org.hibernate.Transaction;
 import fr.epita.quiz_manager.datamodel.Question;
 import fr.epita.quiz_manager.datamodel.Quiz;
 
+/**
+ * <h3>Description</h3>
+ * <p>This QuizOperationsService class is used to
+ * provide
+ * services
+ * create, update, search, delete and searchExcept
+ *  for {@link Quiz}
+ * object types, it includes 3 fields: </p>
+ * <p><pre><code>
+ * 	&#64Inject
+ * 	private QuizDAO instance;
+ *
+ *	&#64Inject
+ *	QuestionOperationsService instance;
+ *
+ *	&#64Inject
+ *	private SessionFactory instance;
+ * </code></pre></p>
+ * <h3>Usage</h3>
+ * <p>This class should be used as follows:<pre><code>
+ *	&#64Inject
+ *	QuizOperationsService instance;
+ * </code></pre></p>
+ *<p>
+ * @author Stéfano Acosta - Álvaro Bilbao
+ *</p>
+ */
 public class QuizOperationsService {
 	@Inject
 	private QuizDAO quizdao;

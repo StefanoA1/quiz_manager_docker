@@ -8,8 +8,33 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
+import fr.epita.quiz_manager.datamodel.Quiz;
 import fr.epita.quiz_manager.datamodel.User;
 
+/**
+ * <h3>Description</h3>
+ * <p>This UserOperationsService class is used to
+ * provide
+ * services: 
+ * create, update, authenticate, delete, search
+ *  for {@link User}
+ * object types, it includes 3 fields: </p>
+ * <p><pre><code>
+ * 	&#64Inject
+ * 	private UserDAO instance;
+ *
+ *	&#64Inject
+ *	private SessionFactory instance;
+ * </code></pre></p>
+ * <h3>Usage</h3>
+ * <p>This class should be used as follows:<pre><code>
+ *	&#64Inject
+ *	UserOperationsService instance;
+ * </code></pre></p>
+ *<p>
+ * @author Stéfano Acosta - Álvaro Bilbao
+ *</p>
+ */
 public class UserOperationsService {
 
 	@Inject

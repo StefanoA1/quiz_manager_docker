@@ -3,8 +3,29 @@ package fr.epita.quiz_manager.services;
 
 import java.util.Map;
 
+import fr.epita.quiz_manager.datamodel.User;
+
 /**
- * reserved for javadoc
+ * <h3>Description</h3>
+ * <p>This WhereClauseBuilder generic class will provide a
+ * bonus
+ * ,as it Maps parameters to simplify the queryString generation for each type of class.
+ * Used in:
+ *  for {@link GenericORMDao}
+ * object types, it includes 2 fields: </p>
+ * <p><pre><code>
+ * 	private Map<String, Object> parameters;
+ *
+ *	private String queryString;
+ * </code></pre></p>
+ * <h3>Usage</h3>
+ * <p>This class should be used as follows:<pre><code>
+ *	&#64Inject
+ *	UserOperationsService instance;
+ * </code></pre></p>
+ *<p>
+ * @author Stéfano Acosta - Álvaro Bilbao
+ *</p>
  */
 public class WhereClauseBuilder<T> {
 
