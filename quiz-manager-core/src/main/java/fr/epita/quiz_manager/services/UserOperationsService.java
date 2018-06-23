@@ -43,4 +43,11 @@ public class UserOperationsService {
 		return userDAO.search(criteria);
 	}
 	
+	public void deleteUser(User user) {
+		final Session session = factory.openSession();
+		final Transaction transaction = session.beginTransaction();
+		userDAO.delete(user, session);
+		transaction.commit();
+		session.close();
+	}
 }

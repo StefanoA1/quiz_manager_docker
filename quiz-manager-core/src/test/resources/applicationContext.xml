@@ -60,7 +60,7 @@
 			and
 				(:choice is null or mcqchoice.choice like :choice)
 			and
-				(:correct is null or mcqchoice.correct = :correct)
+				(:correct is null or mcqchoice.correct is :correct)
 			and
 				(:question is null or mcqchoice.question = :question)
 		]]></value>

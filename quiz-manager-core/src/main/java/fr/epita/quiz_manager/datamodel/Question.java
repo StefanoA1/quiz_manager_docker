@@ -18,12 +18,6 @@ public class Question {
 	private QuestionType type;
 
 	/**
-	 *
-	 */
-	public Question() {
-	}
-
-	/**
 	 * @return the question
 	 */
 	public String getTitle() {
