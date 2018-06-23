@@ -17,7 +17,7 @@ public class MCQChoice {
 
 	private String choice;
 	// true for correct answer, false otherwise
-	private boolean correct;
+	private Boolean correct;
 
 	@ManyToOne
 	private Question question;
@@ -47,7 +47,7 @@ public class MCQChoice {
 	/**
 	 * @return the valid
 	 */
-	public boolean isCorrect() {
+	public Boolean isCorrect() {
 		return correct;
 	}
 
@@ -55,7 +55,7 @@ public class MCQChoice {
 	 * @param valid
 	 *            the valid to set
 	 */
-	public void setCorrect(boolean correct) {
+	public void setCorrect(Boolean correct) {
 		this.correct = correct;
 	}
 
