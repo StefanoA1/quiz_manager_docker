@@ -32,7 +32,6 @@ public class QuestionService {
 	
 	@POST
 	@Path("/createMCQQuestion")
-	@Produces(value = {MediaType.APPLICATION_JSON_VALUE})
 	public void create(@WebParam MCQQuestion question) {
 		questionOperationsService.createMCQQuestion(question.getQuestion(), question.getAnswers());
 	}
@@ -44,6 +43,17 @@ public class QuestionService {
 		question.setId(id);
 		
 		return questionOperationsService.searchMCQChoices(question);
+	}
+	@POST
+	@Path("/updateMCQQuestion")
+	public void update(@WebParam MCQQuestion question) {
+		questionOperationsService.updateMCQQuestion(question.getQuestion(), question.getAnswers());
+	}
+	
+	@POST
+	@Path("/deleteMCQQuestion")
+	public void delete(@WebParam Question question) {
+		questionOperationsService.deleteMCQQuestion(question);
 	}
 	
 }
