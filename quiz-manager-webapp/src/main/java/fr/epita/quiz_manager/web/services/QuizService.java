@@ -14,7 +14,23 @@ import org.springframework.http.MediaType;
 import fr.epita.quiz_manager.datamodel.Question;
 import fr.epita.quiz_manager.datamodel.Quiz;
 import fr.epita.quiz_manager.services.QuizOperationsService;
-
+/**
+ * <h3>Description</h3>
+ * <p>This QuizService class is used to
+ * expose
+ * services: 
+ * create, update, delete, search
+ * for Quiz
+ * </p>
+ * <h3>Usage</h3>
+ * <p>This class should be used as follows:<pre><code>
+ *	HOSTSERVER-IP-ADDRESS + desired Path,
+ *in case of running locally, point to localhost:8080
+ * </code></pre></p>
+ *<p>
+ * @author Stéfano Acosta - Álvaro Bilbao
+ *</p>
+ */
 @Path("/quizzes")
 public class QuizService {
 	@Inject

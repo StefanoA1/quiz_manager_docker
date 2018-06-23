@@ -14,6 +14,23 @@ import org.springframework.http.MediaType;
 import fr.epita.quiz_manager.datamodel.User;
 import fr.epita.quiz_manager.services.UserOperationsService;
 
+/**
+ * <h3>Description</h3>
+ * <p>This UsersService class is used to
+ * expose
+ * services: 
+ * create, authenticate, search
+ * for Users
+ * </p>
+ * <h3>Usage</h3>
+ * <p>This class should be used as follows:<pre><code>
+ *	HOSTSERVER-IP-ADDRESS + desired Path,
+ *in case of running locally, point to localhost:8080
+ * </code></pre></p>
+ *<p>
+ * @author Stéfano Acosta - Álvaro Bilbao
+ *</p>
+ */
 @Path("/")
 public class UsersService {
 

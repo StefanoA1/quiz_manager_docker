@@ -15,6 +15,23 @@ import fr.epita.quiz_manager.datamodel.UserQuiz;
 import fr.epita.quiz_manager.services.UserQuizOperationsService;
 import fr.epita.quiz_manager.web.param.models.UserQuizWrapper;
 
+/**
+ * <h3>Description</h3>
+ * <p>This UserQuizService class is used to
+ * expose
+ * services: 
+ * create, search
+ * for UserQuiz
+ * </p>
+ * <h3>Usage</h3>
+ * <p>This class should be used as follows:<pre><code>
+ *	HOSTSERVER-IP-ADDRESS + desired Path,
+ *in case of running locally, point to localhost:8080
+ * </code></pre></p>
+ *<p>
+ * @author Stéfano Acosta - Álvaro Bilbao
+ *</p>
+ */
 @Path("/userquizzes")
 public class UserQuizService {
 	
