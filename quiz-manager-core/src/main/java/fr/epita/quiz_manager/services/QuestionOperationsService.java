@@ -26,7 +26,6 @@ public class QuestionOperationsService {
 	private SessionFactory factory;
 
 	// @Transactional
-	// TODO check that in a further lecture
 	public void deleteMCQQuestion(Question question) {
 		final Session session = factory.openSession();
 		final Transaction transaction = session.beginTransaction();
