@@ -20,10 +20,10 @@ public class QuizOperationsService {
 	@Inject
 	QuestionOperationsService questionOperationsService;
 
-	public void createQuiz(Quiz quiz, Set<Question> questions) {
+	public void createQuiz(Quiz quiz) {
 		final Session session = factory.openSession();
 		final Transaction transaction = session.beginTransaction();
-		quiz.setQuestionList(questions);
+		//quiz.setQuestionList(questions);
 		quizdao.create(quiz, session);
 		/*for (Question question : questions) {
 			questiondao.create(question, session);
@@ -32,11 +32,11 @@ public class QuizOperationsService {
 		session.close();
 	}
 
-	public void updateQuiz(Quiz quiz, Set<Question> questionList) {
+	public void updateQuiz(Quiz quiz) {
 		final Session session = factory.openSession();
 		final Transaction transaction = session.beginTransaction();
 
-		quiz.setQuestionList(questionList);
+		//quiz.setQuestionList(questionList);
 		// update quiz
 		quizdao.update(quiz, session);
 
