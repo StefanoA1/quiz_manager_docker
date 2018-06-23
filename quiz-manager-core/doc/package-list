@@ -1,0 +1,5 @@
+fr.epita.quizManager.test
+fr.epita.quiz_manager.datamodel
+fr.epita.quiz_manager.services
+fr.epita.quiz_manager.web.param.models
+fr.epita.quiz_manager.web.services

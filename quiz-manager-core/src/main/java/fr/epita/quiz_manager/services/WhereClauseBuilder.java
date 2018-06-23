@@ -3,8 +3,6 @@ package fr.epita.quiz_manager.services;
 
 import java.util.Map;
 
-import fr.epita.quiz_manager.datamodel.User;
-
 /**
  * <h3>Description</h3>
  * <p>This WhereClauseBuilder generic class will provide a
