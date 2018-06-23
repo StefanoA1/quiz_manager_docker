@@ -54,7 +54,7 @@ public class QuizOperationsService {
 		Question emptyQuestion = new Question();
 		List<Question> allQuestions;
 		allQuestions = questionOperationsService.search(emptyQuestion);
-		allQuestions.removeAll(criteria.getQuestionList());
+		allQuestions.removeAll(quizdao.search(criteria).get(0).getQuestionList());
 		return allQuestions;
 	}
 	
