@@ -8,6 +8,25 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 
+/**
+ * <h3>Description</h3>
+ * <p>This UserQuiz class is used to model a special kind of quizzes, which are quizzes taken by a User
+ * , it includes 5 fields: </p>
+ * <p><pre><code>
+ * Integer id;
+ * User user;
+ * List&ltMCQChoice&gt answers;
+ * Quiz quiz;
+ * Double score;
+ * </code></pre></p>
+ * <h3>Usage</h3>
+ * <p>This class should be used as follows:<pre><code>
+ *	private UserQuiz instance;
+ * </code></pre></p>
+ *<p>
+ * @author Stéfano Acosta - Álvaro Bilbao
+ *</p>
+ */
 @Entity
 public class UserQuiz {
 

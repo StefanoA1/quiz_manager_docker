@@ -8,10 +8,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * <h3>Description</h3>
+ * <p>This User class is used to model possible users for the system, it includes 5 fields 
+ * and indicates parameters to be persisted in the DB</p>
+ * <h3>Usage</h3>
+ * <p>This class should be used as follows:<pre><code>
+ *	private User instance;
+ * </code></pre></p>
+ *<p>
+ * @author Stéfano Acosta - Álvaro Bilbao
+ *</p>
+ */
 @Entity(name = "UserData")
 @Table(name = "UserData")
 public class User {
-
+	/* fields */
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
@@ -21,6 +33,8 @@ public class User {
 	private String password;
 	@Enumerated(EnumType.ORDINAL)
 	private UserType userType;
+	
+	/* accessors */
 	/**
 	 * @return the name
 	 */

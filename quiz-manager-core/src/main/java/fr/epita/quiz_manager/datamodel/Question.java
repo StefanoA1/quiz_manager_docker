@@ -7,6 +7,19 @@ import javax.persistence.Id;
 
 import fr.epita.quiz_manager.datamodel.QuestionType;
 
+/**
+ * <h3>Description</h3>
+ * <p>This Question class is used to model questions, it includes 3 properties, 
+ * uses queries predefined in the applicationContext</p>
+ * <h3>Usage</h3>
+ * <p>This class should be used as follows:<pre><code>
+ *	private Question instance;
+ * </code></pre></p>
+ *<p>
+ * @author Stéfano Acosta - Álvaro Bilbao
+ *</p>
+ */
+
 @Entity
 public class Question {
 
@@ -35,13 +48,16 @@ public class Question {
 		return true;
 	}
 
+	/* fields */
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
 	private String title;
 	private QuestionType type;
-
+	
+	
+	/* accessors */
 	/**
 	 * @return the question
 	 */
