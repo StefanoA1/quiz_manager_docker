@@ -8,7 +8,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-import fr.epita.quiz_manager.datamodel.Quiz;
 import fr.epita.quiz_manager.datamodel.User;
 
 /**

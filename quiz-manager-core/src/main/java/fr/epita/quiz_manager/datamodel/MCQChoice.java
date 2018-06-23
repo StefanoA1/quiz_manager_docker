@@ -36,14 +36,6 @@ public class MCQChoice {
 	@ManyToOne
 	private Question question;
 
-	/**
-	 *
-	 */
-	/* constructor */
-	
-	public MCQChoice() {
-
-	}
 	/* accessors */
 	/**
 	 * @return the choice

@@ -50,11 +50,7 @@ public class QuizOperationsService {
 	public void createQuiz(Quiz quiz) {
 		final Session session = factory.openSession();
 		final Transaction transaction = session.beginTransaction();
-		//quiz.setQuestionList(questions);
 		quizdao.create(quiz, session);
-		/*for (Question question : questions) {
-			questiondao.create(question, session);
-		}*/
 		transaction.commit();
 		session.close();
 	}
@@ -63,7 +59,6 @@ public class QuizOperationsService {
 		final Session session = factory.openSession();
 		final Transaction transaction = session.beginTransaction();
 
-		//quiz.setQuestionList(questionList);
 		// update quiz
 		quizdao.update(quiz, session);
 
