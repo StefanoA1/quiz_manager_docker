@@ -24,6 +24,23 @@ import fr.epita.quiz_manager.services.QuestionDAO;
 import fr.epita.quiz_manager.services.QuizDAO;
 import fr.epita.quiz_manager.services.QuizOperationsService;
 
+/**
+ * <h3>Description</h3>
+ * <p>This TestQuiz class is used to
+ * test
+ * operations
+ *  for {@link QuizOperationsService}
+ * object types.</p>
+ * 
+ * <h3>Usage</h3>
+ * <p>This class should be used as follows:<pre><code>
+ *	See JUnit4
+ *	for more information
+ * </code></pre></p>
+ *<p>
+ * @author Stéfano Acosta - Álvaro Bilbao
+ *</p>
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations= {"/applicationContext.xml"})
 public class TestQuiz {
@@ -42,6 +59,11 @@ public class TestQuiz {
 	@Inject
 	SessionFactory factory;
 
+	/**
+	 * <h3>Description</h3>
+	 * <p>test save operations of Quiz.
+	 * </p>
+	 */
 	@Test
 	public void testSave() {
 		final Session session = factory.openSession();

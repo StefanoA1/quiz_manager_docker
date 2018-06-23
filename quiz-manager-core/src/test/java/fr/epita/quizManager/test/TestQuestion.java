@@ -5,9 +5,6 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -19,16 +16,36 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import fr.epita.quiz_manager.datamodel.MCQChoice;
 import fr.epita.quiz_manager.datamodel.Question;
 import fr.epita.quiz_manager.datamodel.QuestionType;
-import fr.epita.quiz_manager.services.MCQChoiceDAO;
-import fr.epita.quiz_manager.services.QuestionDAO;
 import fr.epita.quiz_manager.services.QuestionOperationsService;
 
+/**
+ * <h3>Description</h3>
+ * <p>This TestQuestion class is used to
+ * test
+ * operations
+ *  for {@link QuestionOperationsService}
+ * object types.</p>
+ * 
+ * <h3>Usage</h3>
+ * <p>This class should be used as follows:<pre><code>
+ *	See JUnit4
+ *	for more information
+ * </code></pre></p>
+ *<p>
+ * @author Stéfano Acosta - Álvaro Bilbao
+ *</p>
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations= {"/applicationContext.xml"})
 public class TestQuestion {
 	@Inject
 	QuestionOperationsService questionService;
 	
+	/**
+	 * <h3>Description</h3>
+	 * <p>Creates a Setup environment for testing.
+	 * </p>
+	 */
 	@Before
 	public void setup() {
 		
@@ -57,6 +74,11 @@ public class TestQuestion {
 		
 	}
 	
+	/**
+	 * <h3>Description</h3>
+	 * <p>test save and Search operations of Question.
+	 * </p>
+	 */
 	@Test
 	public void testSaveAndSearchQuestion() {
 		final Question question = new Question();
@@ -84,12 +106,21 @@ public class TestQuestion {
 		Assert.assertEquals(2, questionService.searchMCQChoices(question).size());
 	}
 	
+	/**
+	 * <h3>Description</h3>
+	 * <p>test SearchALL operation of Question.
+	 * </p>
+	 */
 	@Test
 	public void testSearchAllQuestions() {
 		List<Question> allQuestions = questionService.search(new Question());
 		Assert.assertEquals(5, allQuestions.size());
 	}
-	
+	/**
+	 * <h3>Description</h3>
+	 * <p>test delete operations of Question.
+	 * </p>
+	 */
 	@Test
 	public void testDeleteQuestion() {
 		List<Question> allQuestions = questionService.search(new Question());
@@ -97,7 +128,11 @@ public class TestQuestion {
 		allQuestions = questionService.search(new Question());
 		Assert.assertEquals(4, allQuestions.size());
 	}
-	
+	/**
+	 * <h3>Description</h3>
+	 * <p>test update operations of Question.
+	 * </p>
+	 */
 	@Test
 	public void testUpdateQuestion() {
 		List<Question> allQuestions = questionService.search(new Question());
@@ -116,6 +151,11 @@ public class TestQuestion {
 		Assert.assertEquals("other name", updatedQuestion.getTitle());
 		Assert.assertEquals(answersSize - 1, questionService.searchMCQChoices(updatedQuestion).size());
 	}
+	/**
+	 * <h3>Description</h3>
+	 * <p>Destroys the Setup environment for testing.
+	 * </p>
+	 */
 	@After
 	public void tearDown() {
 		List<Question> allQuestions = questionService.search(new Question());
