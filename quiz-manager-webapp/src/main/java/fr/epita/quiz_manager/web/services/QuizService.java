@@ -14,7 +14,6 @@ import org.springframework.http.MediaType;
 import fr.epita.quiz_manager.datamodel.Question;
 import fr.epita.quiz_manager.datamodel.Quiz;
 import fr.epita.quiz_manager.services.QuizOperationsService;
-import fr.epita.quiz_manager.web.param.models.QuizAndQuestions;
 
 @Path("/quizzes")
 public class QuizService {

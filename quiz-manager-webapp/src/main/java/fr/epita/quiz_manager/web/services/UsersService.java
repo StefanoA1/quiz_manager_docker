@@ -21,7 +21,7 @@ public class UsersService {
 	private UserOperationsService userServices;
 	
 	@POST
-	@Path("/auth")
+	@Path("/login")
 	@Produces(value = {MediaType.APPLICATION_JSON_VALUE})
 	public User authenticate(@WebParam User user) {
 		boolean isAuthenticated = userServices.authenticate(user.getUsername(), user.getPassword());
