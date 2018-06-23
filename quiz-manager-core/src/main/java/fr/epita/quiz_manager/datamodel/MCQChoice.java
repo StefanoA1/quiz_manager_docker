@@ -8,8 +8,22 @@ import javax.persistence.ManyToOne;
 
 import fr.epita.quiz_manager.datamodel.Question;
 
+/**
+ * <h3>Description</h3>
+ * <p>This MCQChoice class is used to model multiple questions choices, it includes 4 fields 
+ * and indicates parameters to be persisted in the DB as the id, for being a PKt</p>
+ * <h3>Usage</h3>
+ * <p>This class should be used as follows:<pre><code>
+ *	private MCQChoice instance = new MCQChoice();
+ * </code></pre></p>
+ *<p>
+ * @author Stéfano Acosta - Álvaro Bilbao
+ *</p>
+ */
+
 @Entity
 public class MCQChoice {
+	/* fields */
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,10 +39,12 @@ public class MCQChoice {
 	/**
 	 *
 	 */
+	/* constructor */
+	
 	public MCQChoice() {
 
 	}
-
+	/* accessors */
 	/**
 	 * @return the choice
 	 */
