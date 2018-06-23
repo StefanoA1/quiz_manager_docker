@@ -12,7 +12,31 @@ import fr.epita.quiz_manager.datamodel.MCQChoice;
 import fr.epita.quiz_manager.datamodel.Question;
 
 /**
- * reserved for javadoc
+ * <h3>Description</h3>
+ * <p>This QuestionOperationsService class is used to
+ * provide
+ * services: 
+ * create, update, delete, search
+ * for {@link Question}
+ * object types, it includes 3 fields: </p>
+ * <p><pre><code>
+ * 	&#64Inject
+ * 	private MCQChoiceDAO instance;
+ *
+ *	&#64Inject
+ *	private QuestionDAO instance;
+ *
+ *	&#64Inject
+ *	private SessionFactory instance;
+ * </code></pre></p>
+ * <h3>Usage</h3>
+ * <p>This class should be used as follows:<pre><code>
+ *	&#64Inject
+ *	QuestionOperationsService instance;
+ * </code></pre></p>
+ *<p>
+ * @author Stéfano Acosta - Álvaro Bilbao
+ *</p>
  */
 public class QuestionOperationsService {
 

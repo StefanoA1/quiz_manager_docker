@@ -9,8 +9,19 @@ import javax.inject.Named;
 import fr.epita.quiz_manager.datamodel.MCQChoice;
 
 /**
- * reserved for javadoc
+ * <h3>Description</h3>
+ * <p>This MCQChoiceDAO class is used to manage answers type {@link MCQChoice} persisted in the database 
+ * using queries predefined in the applicationContext</p>
+ * <h3>Usage</h3>
+ * <p>This class should be used as follows:<pre><code>
+ *   &#64Inject
+ *	private MCQChoiceDAO instance;
+ * </code></pre></p>
+ *<p>
+ * @author Stéfano Acosta - Álvaro Bilbao
+ *</p>
  */
+
 public class MCQChoiceDAO extends GenericORMDao<MCQChoice> {
 
 	/*
@@ -21,6 +32,10 @@ public class MCQChoiceDAO extends GenericORMDao<MCQChoice> {
 	@Named("mcqChoiceQuery")
 	private String query;
 	
+	/*
+	 * (non-Javadoc)
+	 * @see fr.epita.quiz.services.GenericORMDao#getWhereClauseBuilder(java.lang.Object)
+	 */
 	@Override
 	protected WhereClauseBuilder<MCQChoice> getWhereClauseBuilder(MCQChoice entity) {
 		final WhereClauseBuilder<MCQChoice> whereClauseBuilder = new WhereClauseBuilder<>();

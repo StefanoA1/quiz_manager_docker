@@ -11,6 +11,31 @@ import fr.epita.quiz_manager.datamodel.MCQChoice;
 import fr.epita.quiz_manager.datamodel.Quiz;
 import fr.epita.quiz_manager.datamodel.UserQuiz;
 
+/**
+ * <h3>Description</h3>
+ * <p>This UserQuizOperationsService class is used to
+ * provide
+ * services: 
+ * create, search
+ *  for {@link UserQuiz}
+ * object types, it includes 3 fields: </p>
+ * <p><pre><code>
+ * 	&#64Inject
+ * 	private UserQuizDAO instance;
+ *
+ *	&#64Inject
+ *	private SessionFactory instance;
+ * </code></pre></p>
+ * <h3>Usage</h3>
+ * <p>This class should be used as follows:<pre><code>
+ *	&#64Inject
+ *	UserQuizOperationsService instance;
+ * </code></pre></p>
+ *<p>
+ * @author Stéfano Acosta - Álvaro Bilbao
+ *</p>
+ */
+
 public class UserQuizOperationsService {
 	@Inject
 	private UserQuizDAO userquizdao;
