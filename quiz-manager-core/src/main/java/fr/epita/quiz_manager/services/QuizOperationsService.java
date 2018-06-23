@@ -23,8 +23,8 @@ public class QuizOperationsService {
 	public void createQuiz(Quiz quiz, Set<Question> questions) {
 		final Session session = factory.openSession();
 		final Transaction transaction = session.beginTransaction();
-		quizdao.create(quiz, session);
 		quiz.setQuestionList(questions);
+		quizdao.create(quiz, session);
 		/*for (Question question : questions) {
 			questiondao.create(question, session);
 		}*/
