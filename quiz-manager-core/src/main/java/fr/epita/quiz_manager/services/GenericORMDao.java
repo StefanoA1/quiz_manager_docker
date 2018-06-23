@@ -9,12 +9,21 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 
 /**
- * reserved for javadoc
+ * <h3>Description</h3>
+ * <p>This GenericORMDao&ltT&gt abstract class is used to be derived being a generic
+ * DAO class to interact with the ORM. 
+ * using queries predefined in the applicationContext</p>
+ * <h3>Usage</h3>
+ * <p>This class should be used to extend other classes as follows:<pre><code>
+ * public class classTypeDAO extends GenericORMDao&ltclassType&gt
+ * </code></pre></p>
+ *<p>
+ * @author Stéfano Acosta - Álvaro Bilbao
+ *</p>
  */
 public abstract class GenericORMDao<T> {
 
@@ -71,7 +80,16 @@ public abstract class GenericORMDao<T> {
 		return results;
 		
 	}
-
+	/**
+	 * <h3>Description</h3>
+	 * <p>Given a Type and a query, returns a QueryString
+	 *  for using the ORM Hibernate Framework.
+	 * </p>
+	 * @param T
+	 * 
+	 * @return WhereClauseBuilder : Is QueryString Type T
+	 * 
+	 */
 	protected abstract WhereClauseBuilder<T> getWhereClauseBuilder(T entity);
 
 }
