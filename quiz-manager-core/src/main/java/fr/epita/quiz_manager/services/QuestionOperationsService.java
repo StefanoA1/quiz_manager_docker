@@ -63,11 +63,15 @@ public class QuestionOperationsService {
 		for (final MCQChoice choice : choicesList) {
 			mcqChoicedao.delete(choice, session);
 		}
+		transaction.commit();
 		//update question
+		transaction.begin();
 		questiondao.update(question, session);
 		// create new updated answers 
 		for(MCQChoice choice : answers) {
 			choice.setQuestion(question);
+			//because the old id was deleted and thus we dont want an update
+			choice.setId(null);
 			mcqChoicedao.create(choice, session);
 		}
 		transaction.commit();
