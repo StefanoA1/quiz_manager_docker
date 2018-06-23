@@ -111,11 +111,9 @@
 		<constructor-arg>
 			<value><![CDATA[
 			from Quiz as quiz where
-				(:id is null or quiz.id like :id)
+				(:id is null or quiz.id = :id)
 			and
 				(:name is null or quiz.name like :name)
-			and
-				(:questionList is null or quiz.questionList like :questionList)
 		]]></value>
 		</constructor-arg>
 
