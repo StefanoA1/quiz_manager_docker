@@ -23,7 +23,6 @@ public class QuizDAO extends GenericORMDao<Quiz> {
 		final Map<String, Object> parameters = new LinkedHashMap<>();
 		parameters.put("id", entity.getId());
 		parameters.put("name", entity.getName());
-		parameters.put("questionList", entity.getQuestionList());
 		wcb.setParameters(parameters);
 		return wcb;
 	}

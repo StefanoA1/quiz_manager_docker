@@ -24,8 +24,8 @@ public class QuizService {
 	@POST
 	@Path("/create")
 	@Produces(value = {MediaType.APPLICATION_JSON_VALUE})
-	public boolean createQuiz(@WebParam QuizAndQuestions quizAndQuestions) {
-		quizServices.createQuiz(quizAndQuestions.getQuiz(), quizAndQuestions.getQuestionsSet());
+	public boolean createQuiz(@WebParam Quiz quiz) {
+		quizServices.createQuiz(quiz);
 		return true;
 	}
 	
@@ -63,7 +63,7 @@ public class QuizService {
 	@POST
 	@Path("/update")
 	@Produces(value = {MediaType.APPLICATION_JSON_VALUE})
-	public void updateQuiz(@WebParam QuizAndQuestions quizAndQuestions) {
-		quizServices.updateQuiz(quizAndQuestions.getQuiz(), quizAndQuestions.getQuestionsSet());
+	public void updateQuiz(@WebParam Quiz quiz) {
+		quizServices.updateQuiz(quiz);
 	}
 }
